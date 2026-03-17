@@ -48,7 +48,7 @@ on 🔄 In Review items — the decision is being worked. Check
 |---|---|---|
 | Framework | Next.js | ✅ Decided |
 | Language | TypeScript | ✅ Decided |
-| Styling | Not determined | ❓ Undecided |
+| Styling | Tailwind CSS | ✅ Decided |
 | State management | Zustand | ✅ Decided |
 | Auth | Not required | ✅ Decided |
 
@@ -105,6 +105,7 @@ record it here before updating the table above.
 | 2026-03-17 | Web auth | Auth required vs not required | Not required | Personal tool, no user accounts needed |
 | 2026-03-17 | Cloud provider (web) | Vercel, Netlify | Vercel | Free tier, pairs with Next.js, auto-deploys from GitHub |
 | 2026-03-17 | CI/CD | GitHub Actions, none | GitHub Actions | Already on GitHub, free tier, project will grow |
+| 2026-03-17 | Web styling | Tailwind CSS, CSS Modules | Tailwind CSS | Pairs naturally with Next.js, free, scales well as project grows |
 
 ---
 
