@@ -3,7 +3,7 @@
 ## Meta
 - **ID:** FEAT-2026-03-17-001
 - **Type:** New Feature
-- **Status:** Backlog
+- **Status:** Active
 - **Priority:** Medium — personal tool with no active deadline; foundational feature but no users blocked
 - **Date Created:** 2026-03-17
 - **Requested By:** Operator
