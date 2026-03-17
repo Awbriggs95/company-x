@@ -46,14 +46,13 @@ on 🔄 In Review items — the decision is being worked. Check
 
 | Decision | Choice | Status |
 |---|---|---|
-| Framework | Not determined | ❓ Undecided |
+| Framework | Next.js | ✅ Decided |
 | Language | TypeScript | ✅ Decided |
 | Styling | Not determined | ❓ Undecided |
-| State management | Not determined | ❓ Undecided |
-| Auth | Not determined | ❓ Undecided |
+| State management | Zustand | ✅ Decided |
+| Auth | Not required | ✅ Decided |
 
 > Web frontend section added when a web capability was first requested.
-> All entries Undecided until a web framework SPIKE is completed.
 
 ---
 
@@ -64,7 +63,7 @@ on 🔄 In Review items — the decision is being worked. Check
 | Language | Python | ✅ Decided |
 | Framework | Not determined | ❓ Undecided |
 | Database | Not determined | ❓ Undecided |
-| Cloud provider | Not determined | ❓ Undecided |
+| Cloud provider | Vercel | ✅ Decided |
 | API style | Not determined | ❓ Undecided |
 | Auth provider | Not determined | ❓ Undecided |
 | File storage | Not determined | ❓ Undecided |
@@ -76,7 +75,7 @@ on 🔄 In Review items — the decision is being worked. Check
 | Decision | Choice | Status |
 |---|---|---|
 | Version control | GitHub | ✅ Decided |
-| CI/CD | Not determined | ❓ Undecided |
+| CI/CD | GitHub Actions | ✅ Decided |
 | Monitoring | Not determined | ❓ Undecided |
 | Error tracking | Not determined | ❓ Undecided |
 | App distribution | Expo EAS | ✅ Decided |
@@ -101,7 +100,11 @@ record it here before updating the table above.
 
 | Date | Decision | Options Considered | Choice Made | Rationale |
 |---|---|---|---|---|
-| — | — | — | — | — |
+| 2026-03-17 | Web framework | Next.js, Vite + React | Next.js | Growing project, free Vercel hosting, industry standard |
+| 2026-03-17 | Web state management | React useState, Zustand | Zustand | Project will grow over time, lightweight and simple |
+| 2026-03-17 | Web auth | Auth required vs not required | Not required | Personal tool, no user accounts needed |
+| 2026-03-17 | Cloud provider (web) | Vercel, Netlify | Vercel | Free tier, pairs with Next.js, auto-deploys from GitHub |
+| 2026-03-17 | CI/CD | GitHub Actions, none | GitHub Actions | Already on GitHub, free tier, project will grow |
 
 ---
 
