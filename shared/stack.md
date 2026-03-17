@@ -46,14 +46,13 @@ on 🔄 In Review items — the decision is being worked. Check
 
 | Decision | Choice | Status |
 |---|---|---|
-| Framework | Not determined | ❓ Undecided |
+| Framework | React + Vite | ✅ Decided |
 | Language | TypeScript | ✅ Decided |
-| Styling | Not determined | ❓ Undecided |
-| State management | Not determined | ❓ Undecided |
+| Styling | CSS Modules | ✅ Decided |
+| State management | React useState (local) | ✅ Decided |
 | Auth | Not determined | ❓ Undecided |
 
-> Web frontend section added when a web capability was first requested.
-> All entries Undecided until a web framework SPIKE is completed.
+> Web frontend section updated when the first web feature (calculator) was built.
 
 ---
 
@@ -101,7 +100,9 @@ record it here before updating the table above.
 
 | Date | Decision | Options Considered | Choice Made | Rationale |
 |---|---|---|---|---|
-| — | — | — | — | — |
+| 2026-03-17 | Web framework | React + Vite, Next.js, Plain HTML | React + Vite | Lightweight SPA setup; aligns with existing React Native knowledge; fast dev server; TypeScript-first |
+| 2026-03-17 | Web styling | CSS Modules, Tailwind, styled-components | CSS Modules | Zero dependencies, scoped styles, no build config overhead |
+| 2026-03-17 | Web state management | Redux, Zustand, React useState | React useState (local) | Calculator has no shared/global state requirements |
 
 ---
 
