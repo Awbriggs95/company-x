@@ -3,12 +3,12 @@
 ## Meta
 - **ID:** INFRA-2026-03-17-002
 - **Type:** Infrastructure / DevOps Task
-- **Status:** Backlog
+- **Status:** Active
 - **Priority:** High — the calculator (FEAT-2026-03-17-001) is complete but not yet accessible; deployment unblocks the operator from using the product
 - **Date Created:** 2026-03-17
 - **Requested By:** Operator
 - **Branch:** infra/INFRA-2026-03-17-002-vercel-deployment
-- **File Lock:** _(populated by Orchestrator at routing time)_
+- **File Lock:** `.github/workflows/`, `web/` (confirm with DevOps Lead after brief review)
 
 ---
 
@@ -18,6 +18,7 @@ Deploy the completed web calculator to Vercel so it is accessible in a browser v
 ---
 
 ## Scope
+- Merge the calculator code from session branch to `main` via PR
 - Create a Vercel project connected to the GitHub repository
 - Configure automatic production deployments triggered on merge to `main`
 - Verify the Next.js app builds successfully in the Vercel environment
@@ -61,6 +62,9 @@ Deploy the completed web calculator to Vercel so it is accessible in a browser v
 - Production-only deployment assumed; no staging environment required — inferred from personal tool context established in FEAT-2026-03-17-001
 - Vercel's native GitHub integration will handle auto-deployments on merge to `main`; GitHub Actions used for pre-merge CI (lint, test) per stack.md
 - Next.js on Vercel requires no additional build configuration beyond `next build` — Vercel detects Next.js automatically
+
+**Orchestrator note added at routing:**
+- Calculator code is currently on session branch `claude/simple-web-calculator-qpXeU` — Engineering Lead confirmed it was merged there due to remote branch constraints. DevOps to handle PR from that branch to `main` as first step before Vercel deployment proceeds.
 
 ---
 
