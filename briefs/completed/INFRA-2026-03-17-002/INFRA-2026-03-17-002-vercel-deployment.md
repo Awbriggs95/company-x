@@ -3,7 +3,7 @@
 ## Meta
 - **ID:** INFRA-2026-03-17-002
 - **Type:** Infrastructure / DevOps Task
-- **Status:** Active
+- **Status:** Complete
 - **Priority:** High — the calculator (FEAT-2026-03-17-001) is complete but not yet accessible; deployment unblocks the operator from using the product
 - **Date Created:** 2026-03-17
 - **Requested By:** Operator
@@ -158,6 +158,6 @@ None — the calculator holds no user data. Rolling back simply takes the URL of
 ---
 
 ## Completion Sign-Off
-- **Orchestrator approved:** [ ]
-- **Operator approved:** [ ]
-- **Moved to completed/:** [ ]
+- **Orchestrator approved:** [x]
+- **Operator approved:** [x]
+- **Moved to completed/:** [x]
