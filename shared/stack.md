@@ -40,9 +40,9 @@ on 🔄 In Review items — the decision is being worked. Check
 | Framework | React Native (Expo) | ✅ Decided |
 | Language | TypeScript | ✅ Decided |
 | Navigation | Expo Router | ✅ Decided |
-| State management | Not determined | ❓ Undecided |
+| State management | React built-in (useState / useReducer) | ✅ Decided |
 | Styling | StyleSheet (native) + NativeWind | ✅ Decided |
-| Auth | Not determined | ❓ Undecided |
+| Auth | Not applicable — no user accounts | 🚫 Not Applicable |
 | Push notifications | Expo Notifications | ✅ Decided |
 | OTA updates | Expo Updates | ✅ Decided |
 
@@ -52,11 +52,12 @@ on 🔄 In Review items — the decision is being worked. Check
 
 | Decision | Choice | Status |
 |---|---|---|
-| Framework | Not determined | ❓ Undecided |
+| Framework | Next.js | ✅ Decided |
 | Language | TypeScript | ✅ Decided |
-| Styling | Not determined | ❓ Undecided |
-| State management | Not determined | ❓ Undecided |
-| Auth | Not determined | ❓ Undecided |
+| Styling | Tailwind CSS | ✅ Decided |
+| State management | Zustand | ✅ Decided |
+| Auth | Not determined — deferred (no user accounts yet) | ❓ Undecided |
+| Hosting | Vercel | ✅ Decided |
 
 > Web frontend section added when a web capability was first requested.
 > All entries Undecided until a web framework SPIKE is completed.
@@ -67,13 +68,13 @@ on 🔄 In Review items — the decision is being worked. Check
 
 | Decision | Choice | Status |
 |---|---|---|
-| Language | Python | ✅ Decided |
-| Framework | Not determined | ❓ Undecided |
-| Database | Not determined | ❓ Undecided |
-| Cloud provider | Not determined | ❓ Undecided |
-| API style | Not determined | ❓ Undecided |
-| Auth provider | Not determined | ❓ Undecided |
-| File storage | Not determined | ❓ Undecided |
+| Language | Not applicable — frontend-only app | 🚫 Not Applicable |
+| Framework | Not applicable — frontend-only app | 🚫 Not Applicable |
+| Database | Not applicable — frontend-only app | 🚫 Not Applicable |
+| Cloud provider | Not applicable — frontend-only app | 🚫 Not Applicable |
+| API style | Not applicable — frontend-only app | 🚫 Not Applicable |
+| Auth provider | Not applicable — frontend-only app | 🚫 Not Applicable |
+| File storage | Not applicable — frontend-only app | 🚫 Not Applicable |
 
 ---
 
@@ -82,9 +83,9 @@ on 🔄 In Review items — the decision is being worked. Check
 | Decision | Choice | Status |
 |---|---|---|
 | Version control | GitHub | ✅ Decided |
-| CI/CD | Not determined | ❓ Undecided |
-| Monitoring | Not determined | ❓ Undecided |
-| Error tracking | Not determined | ❓ Undecided |
+| CI/CD | GitHub Actions | ✅ Decided |
+| Monitoring | Sentry | ✅ Decided |
+| Error tracking | Sentry | ✅ Decided |
 | App distribution | Expo EAS | ✅ Decided |
 
 ---
@@ -107,7 +108,16 @@ record it here before updating the table above.
 
 | Date | Decision | Options Considered | Choice Made | Rationale |
 |---|---|---|---|---|
-| — | — | — | — | — |
+| 2026-03-20 | Mobile state management | None vs library | React built-in (useState/useReducer) | App is a simple calculator with no shared state across screens |
+| 2026-03-20 | Mobile auth | N/A | Not applicable | No user accounts required |
+| 2026-03-20 | Web framework | Next.js (detected) | Next.js | Already in use — confirmed by operator |
+| 2026-03-20 | Web styling | Tailwind CSS (detected) | Tailwind CSS | Already in use — confirmed by operator |
+| 2026-03-20 | Web state management | Zustand (detected) | Zustand | Already in use — confirmed by operator |
+| 2026-03-20 | Web hosting | Vercel (confirmed) | Vercel | Already deployed — confirmed by operator |
+| 2026-03-20 | Backend (all) | N/A | Not applicable | Frontend-only calculator app — no backend needed |
+| 2026-03-20 | CI/CD | GitHub Actions | GitHub Actions | Already on GitHub; free tier sufficient |
+| 2026-03-20 | Monitoring | Sentry | Sentry | Industry standard; generous free tier |
+| 2026-03-20 | Error tracking | Sentry | Sentry | Covers both monitoring and error reporting |
 
 ---
 
