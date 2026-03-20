@@ -4,7 +4,11 @@ import Button from './Button';
 import type { ButtonVariant } from './Button';
 import { useCalculatorStore } from '@/store/calculatorStore';
 
-const ButtonGrid = () => {
+interface ButtonGridProps {
+  onSwitchMode: () => void;
+}
+
+const ButtonGrid = ({ onSwitchMode }: ButtonGridProps) => {
   const { operator, waitingForOperand, inputDigit, inputDecimal, inputOperator, calculate, clear, toggleSign, percentage } =
     useCalculatorStore();
 
@@ -57,11 +61,10 @@ const ButtonGrid = () => {
         />
       ))}
       <Button
-        label="Δt  time difference (HHMM)"
-        onClick={() => inputOperator('timeDiff')}
+        label="⏱ Time"
+        onClick={onSwitchMode}
         variant="function"
-        active={isOperatorActive('timeDiff')}
-        className="col-span-4 text-base"
+        className="col-span-4 text-xl"
       />
     </div>
   );

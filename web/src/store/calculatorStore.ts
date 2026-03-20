@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 
-type Operator = '+' | '-' | '*' | '/' | 'timeDiff';
+type Operator = '+' | '-' | '*' | '/';
 
 interface CalculatorState {
   displayValue: string;
@@ -35,38 +35,15 @@ const OP_SYMBOLS: Record<Operator, string> = {
   '-': '−',
   '*': '×',
   '/': '÷',
-  timeDiff: 'Δt',
 };
 
-/** Parses a number as HHMM (e.g. 1430 → 870 minutes). Returns 'Error' if invalid. */
-function parseHHMM(value: number): number | 'Error' {
-  const v = Math.abs(Math.round(value));
-  const hh = Math.floor(v / 100);
-  const mm = v % 100;
-  if (hh > 23 || mm > 59) return 'Error';
-  return hh * 60 + mm;
-}
-
-/** Formats a minute count as "Xh Ym". */
-function formatTimeDiff(totalMinutes: number): string {
-  const h = Math.floor(totalMinutes / 60);
-  const m = totalMinutes % 60;
-  return `${h}h ${m}m`;
-}
-
-/** Performs arithmetic or time difference. Returns 'Error' on invalid input. */
+/** Performs arithmetic. Returns 'Error' on invalid input. */
 function compute(a: number, op: Operator, b: number): number | 'Error' {
   switch (op) {
     case '+': return a + b;
     case '-': return a - b;
     case '*': return a * b;
     case '/': return b === 0 ? 'Error' : a / b;
-    case 'timeDiff': {
-      const aMin = parseHHMM(a);
-      const bMin = parseHHMM(b);
-      if (aMin === 'Error' || bMin === 'Error') return 'Error';
-      return Math.abs(aMin - bMin);
-    }
   }
 }
 
@@ -146,7 +123,7 @@ export const useCalculatorStore = create<CalculatorState & CalculatorActions>((s
       return;
     }
 
-    const formatted = operator === 'timeDiff' ? formatTimeDiff(result) : formatResult(result);
+    const formatted = formatResult(result);
     set({
       displayValue: formatted,
       expression: `${expression} ${displayValue} =`,
