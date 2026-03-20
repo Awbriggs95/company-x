@@ -1,17 +1,33 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import dynamic from 'next/dynamic';
 import Display from './Display';
 import ButtonGrid from './ButtonGrid';
 import TimeCalculator from '@/components/TimeCalculator';
 import { useCalculatorStore } from '@/store/calculatorStore';
 
+/** Lazy-loaded — 3D libraries only download when the easter egg fires. */
+const EasterEggModal = dynamic(
+  () => import('@/components/EasterEggModal'),
+  { ssr: false }
+);
+
 type Mode = 'arithmetic' | 'time';
 
 const Calculator = () => {
   const [mode, setMode] = useState<Mode>('arithmetic');
-  const { displayValue, expression, inputDigit, inputDecimal, inputOperator, calculate, clear } =
-    useCalculatorStore();
+  const {
+    displayValue,
+    expression,
+    inputDigit,
+    inputDecimal,
+    inputOperator,
+    calculate,
+    clear,
+    showEasterEgg,
+    dismissEasterEgg,
+  } = useCalculatorStore();
 
   useEffect(() => {
     if (mode !== 'arithmetic') return;
@@ -49,16 +65,19 @@ const Calculator = () => {
   }, [mode, inputDigit, inputDecimal, inputOperator, calculate, clear]);
 
   return (
-    <div className="w-full max-w-xs sm:max-w-sm bg-black rounded-3xl overflow-hidden shadow-2xl">
-      {mode === 'arithmetic' ? (
-        <>
-          <Display expression={expression} displayValue={displayValue} />
-          <ButtonGrid onSwitchMode={() => setMode('time')} />
-        </>
-      ) : (
-        <TimeCalculator onBack={() => setMode('arithmetic')} />
-      )}
-    </div>
+    <>
+      {showEasterEgg && <EasterEggModal onClose={dismissEasterEgg} />}
+      <div className="w-full max-w-xs sm:max-w-sm bg-black rounded-3xl overflow-hidden shadow-2xl">
+        {mode === 'arithmetic' ? (
+          <>
+            <Display expression={expression} displayValue={displayValue} />
+            <ButtonGrid onSwitchMode={() => setMode('time')} />
+          </>
+        ) : (
+          <TimeCalculator onBack={() => setMode('arithmetic')} />
+        )}
+      </div>
+    </>
   );
 };
 

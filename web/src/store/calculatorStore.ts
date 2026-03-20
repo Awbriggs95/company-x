@@ -9,6 +9,7 @@ interface CalculatorState {
   previousValue: string | null;
   waitingForOperand: boolean;
   justCalculated: boolean;
+  showEasterEgg: boolean;
 }
 
 interface CalculatorActions {
@@ -19,6 +20,7 @@ interface CalculatorActions {
   clear: () => void;
   toggleSign: () => void;
   percentage: () => void;
+  dismissEasterEgg: () => void;
 }
 
 const INITIAL_STATE: CalculatorState = {
@@ -28,6 +30,7 @@ const INITIAL_STATE: CalculatorState = {
   previousValue: null,
   waitingForOperand: false,
   justCalculated: false,
+  showEasterEgg: false,
 };
 
 const OP_SYMBOLS: Record<Operator, string> = {
@@ -113,6 +116,9 @@ export const useCalculatorStore = create<CalculatorState & CalculatorActions>((s
     const { displayValue, operator, previousValue, expression } = get();
     if (!operator || previousValue === null) return;
 
+    const isEasterEgg =
+      previousValue === '69' && operator === '+' && displayValue === '420';
+
     const result = compute(parseFloat(previousValue), operator, parseFloat(displayValue));
     if (result === 'Error') {
       set({
@@ -131,10 +137,13 @@ export const useCalculatorStore = create<CalculatorState & CalculatorActions>((s
       previousValue: null,
       waitingForOperand: false,
       justCalculated: true,
+      showEasterEgg: isEasterEgg,
     });
   },
 
   clear: () => set(INITIAL_STATE),
+
+  dismissEasterEgg: () => set({ showEasterEgg: false }),
 
   toggleSign: () => {
     const { displayValue } = get();
