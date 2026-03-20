@@ -3,6 +3,13 @@
 > Append-only log of completed work. One entry per closed brief.
 > Written by the Orchestrator at brief close. Never edited retroactively.
 
+## FEAT-2026-03-20-003 — 69+420 Easter Egg — 3D Dance Modal (2026-03-20)
+Implemented a hidden easter egg triggered when the user calculates 69 + 420 = 489 on the web calculator. A fullscreen modal appears with an interactive React Three Fiber scene loading a GLB dancing character with a looping animation and OrbitControls. Falls back to a dancing GIF if the GLB asset is unavailable. Close button (top-right, 44×44px tap target) dismisses the modal. 3D libraries lazy-loaded via `next/dynamic` — no impact on initial calculator load. GIF URL fixed post-QA: replaced broken Tenor share URL with a direct gifdb WebP. All acceptance criteria passed QA.
+- Key decision: GIF fallback (gifdb WebP) used in place of GLB asset pending operator sourcing of `web/public/assets/dancer.glb`
+- Files changed: `web/src/components/EasterEggModal/` (new), `web/src/components/Calculator/index.tsx`, `web/src/store/calculatorStore.ts`
+- Branch: `claude/easter-egg-dance-modal-s8xu3`
+- Handled by: Engineering — Frontend, QA
+
 ## SPIKE-2026-03-20-004 — glTF Dancing Character Asset Sourcing (2026-03-20)
 Evaluated four free/low-cost sourcing paths for a stylised glTF/GLB humanoid character with a looping hip-hop dance animation required by FEAT-2026-03-20-003. Recommended path: Mixamo (Adobe) for character and animation (free), converted from FBX to GLB via Blender (free). Step-by-step acquisition instructions documented in the spike output. GIF placeholder approved for use during development while the real asset is sourced. Operator to obtain and commit asset to `web/public/assets/dancer.glb`.
 - Key decision: Mixamo + Blender FBX → GLB conversion — $0 cost

@@ -3,7 +3,7 @@
 ## Meta
 - **ID:** FEAT-2026-03-20-003
 - **Type:** New Feature
-- **Status:** Active
+- **Status:** Completed
 - **Priority:** Low — non-critical easter egg; no user workflow is blocked while it remains unbuilt
 - **Date Created:** 2026-03-20
 - **Requested By:** Operator
@@ -181,6 +181,6 @@ N/A — web only. Responsive behaviour required: modal and close button must be 
 ---
 
 ## Completion Sign-Off
-- **Orchestrator approved:** [ ]
-- **Operator approved:** [ ]
-- **Moved to completed/:** [ ]
+- **Orchestrator approved:** [x]
+- **Operator approved:** [x]
+- **Moved to completed/:** [x]
