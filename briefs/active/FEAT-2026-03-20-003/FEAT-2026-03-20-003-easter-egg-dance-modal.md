@@ -3,12 +3,12 @@
 ## Meta
 - **ID:** FEAT-2026-03-20-003
 - **Type:** New Feature
-- **Status:** Backlog
+- **Status:** Active
 - **Priority:** Low — non-critical easter egg; no user workflow is blocked while it remains unbuilt
 - **Date Created:** 2026-03-20
 - **Requested By:** Operator
 - **Branch:** feature/FEAT-2026-03-20-003-easter-egg-dance-modal
-- **File Lock:** _(populated by Orchestrator at routing time)_
+- **File Lock:** web/src/components/EasterEggModal/, web/src/components/Calculator/index.tsx, web/src/store/calculatorStore.ts, web/public/assets/dancer.glb
 
 ---
 
