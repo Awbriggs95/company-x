@@ -56,6 +56,13 @@ const ButtonGrid = () => {
           active={btn.active}
         />
       ))}
+      <Button
+        label="Δt  time difference (HHMM)"
+        onClick={() => inputOperator('timeDiff')}
+        variant="function"
+        active={isOperatorActive('timeDiff')}
+        className="col-span-4 text-base"
+      />
     </div>
   );
 };
