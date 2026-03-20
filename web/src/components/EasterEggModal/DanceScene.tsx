@@ -36,11 +36,13 @@ export const DanceSceneFallback = () => (
 
 /** Fallback shown when dancer.glb fails to load (asset not yet in repo). */
 export const DanceSceneError = () => (
-  <div className="flex flex-col items-center justify-center h-full gap-4 text-white text-center px-6">
-    <span className="text-6xl animate-bounce">🕺</span>
-    <p className="text-sm opacity-70">
-      3D scene coming soon — asset pending.
-    </p>
+  <div className="flex items-center justify-center h-full">
+    {/* eslint-disable-next-line @next/next/no-img-element */}
+    <img
+      src="https://tenor.com/bQDvb.gif"
+      alt="Dancing"
+      className="max-h-full max-w-full object-contain"
+    />
   </div>
 );
 
