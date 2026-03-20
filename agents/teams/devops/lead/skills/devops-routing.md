@@ -35,7 +35,8 @@ every time. Senior DevOps must never assume production is approved.
 |---|---|---|
 | CI/CD pipeline change | GitHub Actions, build config | No — infrastructure only |
 | Staging deployment | Deploy to staging environment | No |
-| Production deployment | Deploy to production | Yes — always |
+| Production deployment | Deploy to production via EAS | Yes — always |
+| OTA update (Expo Updates) | JavaScript-only over-the-air update | Yes — always. OTA updates bypass the App Store but still affect production users. Never push an OTA update without operator confirmation. |
 | Infrastructure provisioning | New cloud resources | Yes if production-facing |
 | Secret / config update | Environment variables | Yes if production |
 | Rollback | Revert to previous state | Yes if production |
@@ -47,6 +48,9 @@ every time. Senior DevOps must never assume production is approved.
 
 Before accepting Senior DevOps work as complete:
 
+- [ ] QA Lead report confirms testing passed — **only required if QA was
+  in the routing sequence for this brief. INFRA and CFG briefs routed
+  directly to DevOps do not require a QA report.**
 - [ ] Deployment preparation report is filed
 - [ ] All affected environments confirmed working after change
 - [ ] Rollback verified as executable if needed
@@ -60,7 +64,7 @@ and no operator waiver exists, do not request production confirmation.
 Surface the gap to the operator first:
 
 ```
-To: Operator (via Orchestrator)
+To: Operator
 Brief: [TASK-ID]
 Production deployment is ready but rollback has not been tested.
 

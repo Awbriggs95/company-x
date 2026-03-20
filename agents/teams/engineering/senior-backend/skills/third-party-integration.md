@@ -8,7 +8,17 @@
 ## Before Integrating Any Service
 
 1. Confirm the service is approved in `shared/stack.md`
-2. If not listed — escalate to Lead. Do not integrate unapproved services.
+2. If not listed — escalate to Lead using the standard escalation format
+   before writing any code:
+   ```
+   To: Engineering Lead
+   Brief: [TASK-ID]
+   Escalation type: Stack gap
+   Missing decision: [service name] — not listed in shared/stack.md
+   Blocked: Cannot integrate [service] without approval
+   Continuing: [Any unblocked parts of the task]
+   Recommendation: Add [service] to stack.md or create a SPIKE to evaluate it
+   ```
 3. Read the service's official documentation — do not rely on memory
 4. Understand the service's rate limits, pricing, and failure modes
    before writing a single line of code

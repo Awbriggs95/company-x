@@ -8,11 +8,11 @@
 
 ## Check Stack First
 
-Backend framework and API style are marked PENDING in `shared/stack.md`.
+Backend framework and API style are ❓ Undecided in `shared/stack.md`.
 Before building any API:
 1. Check `shared/stack.md` — is a framework now approved?
 2. If approved — use that framework and follow its conventions
-3. If still PENDING — escalate to Lead immediately
+3. If still ❓ Undecided — escalate to Lead immediately
 
 The principles below apply regardless of framework chosen.
 
@@ -150,6 +150,10 @@ class NotFoundError(AppError):
 class UnauthorisedError(AppError):
     def __init__(self):
         super().__init__("UNAUTHORISED", "Authentication required", 401)
+
+class ForbiddenError(AppError):
+    def __init__(self):
+        super().__init__("FORBIDDEN", "You do not have permission to access this resource", 403)
 ```
 
 Catch all errors at the framework level and map to the standard

@@ -1,8 +1,11 @@
 # Junior Routing Rules
 
+> **Load check:** Before using this file, verify that at least one Junior
+> agent is marked ✅ Active in `shared/routing-rules.md`. If all Juniors
+> are 🔒 Not yet active — do not load or apply this file. Return to
+> `shared/routing-rules.md` and route everything to Senior agents.
+
 > This file is loaded ONLY when one or more Junior agents are active.
-> Do not load this file if all Juniors are locked (🔒) in routing-rules.md.
-> Check the roster in `shared/routing-rules.md` before loading this file.
 
 ---
 

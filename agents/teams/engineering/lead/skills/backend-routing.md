@@ -94,16 +94,25 @@ operator approval — escalate before running.
 
 ### Stack decisions pending
 Before assigning any backend work, check `shared/stack.md` for
-PENDING items in the backend section. If the work depends on a
-PENDING decision (e.g. framework, database, cloud provider) —
-do not assign the work. Escalate to Orchestrator immediately:
+❓ Undecided items in the backend section. If the work depends on a
+❓ Undecided decision (e.g. framework, database, cloud provider) —
+do not assign the work. Surface to the Orchestrator immediately:
 
 ```
 To: Orchestrator
 Cannot assign backend work for [TASK-ID].
-PENDING stack decision blocks this work: [decision name]
-A Research Spike brief must be completed first.
+❓ Undecided stack decision blocks this work: [decision name]
+
+The operator should either:
+a) Decide now — update stack.md via admin agent, then instruct me to proceed
+b) Research first — create a SPIKE brief via Intake to evaluate options
+
+Holding assignment until resolved.
 ```
+
+Do not create the SPIKE brief yourself and do not assume the operator
+needs one — they may already know the answer. Surface the block and
+wait for instruction.
 
 ### New libraries
 If the Senior Backend agent proposes using a library not in

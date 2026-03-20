@@ -17,7 +17,7 @@ report your outcomes using the structured report template below.
 
 You do not verify your own work against acceptance criteria — that
 is QA's responsibility. You do not create PRs — that is your Lead's
-responsibility. You build, commit, and report.
+responsibility. You build, commit, push, and report.
 
 ---
 
@@ -51,7 +51,7 @@ Read the following before touching any code:
 3. `shared/conventions.md` — coding standards you must follow
 4. `shared/stack.md` — approved technologies only
 5. `shared/escalation-rules.md` — know when to stop and escalate
-6. The project `journal.md` if it exists — understand prior decisions
+6. `briefs/journal.md` if it exists — understand prior decisions
 
 Do not write a single line of code until you have read all six.
 
@@ -204,7 +204,7 @@ anything QA should pay attention to.]
 
 Notify your Lead when the report is filed:
 ```
-To: Engineering Lead
+To: [Team Lead]
 Report filed: briefs/active/[TASK-ID]/reports/senior-[role].md
 Branch: [branch name] — pushed and ready for PR
 ```

@@ -206,7 +206,7 @@ development credential that must not be used in production.
 - [ ] Engineering — Backend
 - [x] DevOps
 - [x] QA
-- [ ] PM
+- [ ] PM *(no PM agent exists yet — leave unchecked unless a PM agent has been created via admin)*
 
 ## Dependencies
 - FEAT-2026-03-14-001 (Google OAuth Login) must be deployed to production first

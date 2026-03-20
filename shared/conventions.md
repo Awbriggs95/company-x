@@ -83,7 +83,7 @@ git checkout -b feature/FEAT-2026-03-14-001-google-login
 
 ### Committing
 ```bash
-git add .
+git add [specific files — never git add .]
 git commit -m "FEAT-2026-03-14-001: Add Google OAuth login screen"
 git push origin feature/FEAT-2026-03-14-001-google-login
 ```

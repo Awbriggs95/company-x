@@ -14,6 +14,7 @@
 | Senior Backend | ✅ Active |
 | Senior QA | ✅ Active |
 | Senior DevOps | ✅ Active |
+| Admin | ✅ Active |
 | Junior Frontend | 🔒 Not yet active |
 | Junior Backend | 🔒 Not yet active |
 | Junior QA | 🔒 Not yet active |
@@ -48,7 +49,10 @@ The Orchestrator manages cross-team sequencing, not individual Leads.
 
 ## Activating Junior Agents
 
-When you are ready to activate a Junior agent:
-1. Write their CLAUDE.md file in the appropriate folder
-2. Update the roster table above to ✅ Active
-3. Load `shared/routing-rules-junior.md` — it contains all Junior assignment criteria
+When you are ready to activate a Junior agent, use the admin
+agent's `create` command — it guides the full creation flow
+and automatically propagates the new agent into every file
+that needs updating.
+
+Do not create Junior agent files manually — use the admin agent
+to ensure nothing is missed.

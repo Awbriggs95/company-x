@@ -114,6 +114,8 @@ verify all of the following:
 - [ ] All acceptance criteria relevant to frontend are met
 - [ ] UI renders correctly on both platforms (or stated platform only)
 - [ ] Loading, empty, and error states are implemented
+- [ ] New features include tests — minimum 80% coverage per conventions.md
+- [ ] Bug fixes include a regression test
 - [ ] No console errors or warnings introduced
 - [ ] Code passes ESLint and Prettier per shared/conventions.md
 - [ ] Branch is pushed and PR is open against the correct base branch

@@ -9,13 +9,13 @@
 
 ## Check Stack First
 
-State management library selection is marked PENDING in `shared/stack.md`
+State management library selection is ❓ Undecided in `shared/stack.md`
 until a Research Spike is completed and approved.
 
 **Before implementing any global state:**
 1. Check `shared/stack.md` — is a library now approved?
 2. If approved — use that library, read its skill file if one exists
-3. If still PENDING — escalate to Lead immediately. Do not choose a
+3. If still ❓ Undecided — escalate to Lead immediately. Do not choose a
    library independently.
 
 The guidance below applies once a library is approved and covers

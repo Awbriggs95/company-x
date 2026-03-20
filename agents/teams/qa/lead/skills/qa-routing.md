@@ -47,7 +47,7 @@ should prioritise:
 | Refactor (RFCT) | Regression (behaviour unchanged), Edge case |
 | Config Change (CFG) | Functional (verify config applied), Security (if credentials) |
 | DevOps Task (INFRA) | Functional (verify deployment), Performance (if infra change) |
-| Research Spike (SPIKE) | Not applicable — spikes do not require QA |
+| Research Spike (SPIKE) | Not applicable — the Engineering Lead validates SPIKE output against success criteria. QA is not assigned to SPIKE briefs. |
 
 ---
 

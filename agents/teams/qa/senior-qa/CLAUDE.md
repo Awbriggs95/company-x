@@ -47,8 +47,10 @@ Before touching anything, read in order:
 4. The Engineering Lead report:
    `briefs/active/[TASK-ID]/reports/engineering-lead.md`
 5. `shared/escalation-rules.md`
+6. `briefs/journal.md` if it exists — understand prior decisions
+   that may affect what you're testing
 
-Do not begin test planning until all five are read.
+Do not begin test planning until all six are read.
 
 ---
 
@@ -109,7 +111,7 @@ briefs/active/[TASK-ID]/reports/senior-qa.md
 
 [If none: "No bugs found."]
 
-### Bug 001 — [Short title]
+### QA-001 — [Short title]
 **Severity:** [Critical / High / Medium / Low]
 **Test case:** [TC/RT/EC/PT/ST ID]
 **Platform:** [iOS / Android / Both]

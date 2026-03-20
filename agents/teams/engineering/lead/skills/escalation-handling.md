@@ -74,7 +74,7 @@ be inferred from existing context.
 - Missing API from another team → check if Backend work is complete;
   if not, this is a sequencing issue — inform Orchestrator
 - Missing stack decision → escalate to Orchestrator immediately,
-  reference the PENDING item in shared/stack.md
+  reference the ❓ Undecided item in shared/stack.md
 
 ```
 To: Orchestrator
@@ -156,6 +156,53 @@ Additional work found: [What the Senior discovered is needed]
 Recommended action: Create a new brief for the additional work.
 Current brief status: [Can complete original scope without expansion | Cannot complete without expansion]
 ```
+
+---
+
+### Category 6 — SPIKE-Specific Issues
+
+SPIKE briefs have unique failure modes that don't map cleanly to
+Categories 1–5. Use this category when the Senior is executing a
+Research Spike brief.
+
+**When to use:**
+- Time box reached before success criteria are met
+- Options to evaluate are insufficient or unavailable
+- The question cannot be answered definitively with available information
+- A proof of concept is needed but would exceed the time box
+
+**Resolution:** Always escalate to you (the Lead) first. Assess whether
+the SPIKE can be completed with a partial recommendation, or whether
+it needs to be extended or restructured.
+
+**If a partial recommendation is sufficient:**
+```
+To: Senior [role]
+SPIKE escalation assessed — partial recommendation acceptable.
+Document findings to date, state clearly what remains uncertain,
+and include a suggested next step in the output.
+Proceed to filing the spike output report.
+```
+
+**If the SPIKE needs to be extended or restructured:**
+Escalate to Orchestrator with a clear statement of what additional
+time or scope is needed:
+
+```
+To: Orchestrator
+Brief: [TASK-ID]
+Escalation: SPIKE cannot complete within current constraints
+Issue: [What the Senior encountered — time box, insufficient options, etc.]
+Current findings: [Summary of what has been discovered so far]
+Options:
+  a) Extend time box — [additional time needed and why]
+  b) Restructure scope — [what would need to change in the brief]
+  c) Accept partial recommendation — [what can be concluded now]
+Recommended: [Your recommendation]
+```
+
+Do not let the Senior exceed the time box silently. A SPIKE that
+runs indefinitely has failed — surface it and let the operator decide.
 
 ---
 

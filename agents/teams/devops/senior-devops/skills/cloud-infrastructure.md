@@ -9,11 +9,11 @@
 
 ## Check Stack First
 
-Cloud provider is marked PENDING in `shared/stack.md`.
+Cloud provider is ❓ Undecided in `shared/stack.md`.
 Before provisioning any cloud resource:
 1. Check `shared/stack.md` — is a provider now approved?
 2. If approved — use that provider only
-3. If still PENDING — escalate to Lead immediately
+3. If still ❓ Undecided — escalate to Lead immediately
 
 The principles below apply regardless of provider chosen.
 

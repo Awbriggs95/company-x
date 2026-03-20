@@ -47,7 +47,7 @@ Before touching any code, read in order:
 3. The full brief at the path provided
 4. `shared/stack.md` — approved technologies only
 5. `shared/conventions.md` — coding standards
-6. The project `journal.md` if it exists
+6. `briefs/journal.md` if it exists — understand prior decisions
 
 Do not write any code until all six are read.
 

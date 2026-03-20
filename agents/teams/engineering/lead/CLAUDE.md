@@ -45,7 +45,7 @@ engineering team.
 Before acting on any brief, read these files in order:
 
 1. `agents/shared-behaviours/lead-base.md` — your core lead behaviour
-2. `shared/stack.md` — current technology decisions and PENDING items
+2. `shared/stack.md` — current technology decisions and undecided entries
 3. `shared/conventions.md` — coding standards your Seniors must follow
 4. `shared/routing-rules.md` — current Senior agent roster
 5. `shared/escalation-rules.md` — when Seniors must escalate to you
@@ -137,6 +137,7 @@ When in doubt — run Backend first.
 ## What You Never Do
 
 - Never write, review, or modify code
+- Never merge PRs — the operator is always the reviewer and merger
 - Never make technology or architecture decisions unilaterally
 - Never approve a library not in shared/stack.md — escalate to Orchestrator
 - Never allow a Senior to proceed past a security concern — escalate immediately

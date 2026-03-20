@@ -8,18 +8,24 @@
 
 ## Decision States
 
-Every decision in this file has one of three states:
+Every decision in this file has one of four states:
 
 | State | Meaning |
 |---|---|
 | ✅ Decided | Choice made and locked in — agents use this |
-| ❓ Undecided | Not determined yet — consciously deferred |
+| ❓ Undecided | Relevant but not determined yet — consciously deferred |
+| 🚫 Not Applicable | This section or decision does not apply to this project |
 | 🔄 In Review | SPIKE brief exists and is active — decision in progress |
 
 **Undecided is not the same as unknown.** An ❓ Undecided entry means the
 team has acknowledged this decision exists but has chosen not to make it yet.
 Agents must never make Undecided decisions independently — escalate to the
 Orchestrator, which will recommend a SPIKE brief to resolve it.
+
+**Not Applicable means the decision was explicitly ruled out.** A 🚫 Not
+Applicable entry means the tech-architect skill confirmed with the operator
+that this capability is not needed for this project. It is not a gap —
+it is a deliberate exclusion.
 
 **In Review means a SPIKE is already running.** Agents must not escalate
 on 🔄 In Review items — the decision is being worked. Check
@@ -46,13 +52,14 @@ on 🔄 In Review items — the decision is being worked. Check
 
 | Decision | Choice | Status |
 |---|---|---|
-| Framework | Next.js | ✅ Decided |
+| Framework | Not determined | ❓ Undecided |
 | Language | TypeScript | ✅ Decided |
-| Styling | Tailwind CSS | ✅ Decided |
-| State management | Zustand | ✅ Decided |
-| Auth | Not required | ✅ Decided |
+| Styling | Not determined | ❓ Undecided |
+| State management | Not determined | ❓ Undecided |
+| Auth | Not determined | ❓ Undecided |
 
 > Web frontend section added when a web capability was first requested.
+> All entries Undecided until a web framework SPIKE is completed.
 
 ---
 
@@ -63,7 +70,7 @@ on 🔄 In Review items — the decision is being worked. Check
 | Language | Python | ✅ Decided |
 | Framework | Not determined | ❓ Undecided |
 | Database | Not determined | ❓ Undecided |
-| Cloud provider | Vercel | ✅ Decided |
+| Cloud provider | Not determined | ❓ Undecided |
 | API style | Not determined | ❓ Undecided |
 | Auth provider | Not determined | ❓ Undecided |
 | File storage | Not determined | ❓ Undecided |
@@ -75,7 +82,7 @@ on 🔄 In Review items — the decision is being worked. Check
 | Decision | Choice | Status |
 |---|---|---|
 | Version control | GitHub | ✅ Decided |
-| CI/CD | GitHub Actions | ✅ Decided |
+| CI/CD | Not determined | ❓ Undecided |
 | Monitoring | Not determined | ❓ Undecided |
 | Error tracking | Not determined | ❓ Undecided |
 | App distribution | Expo EAS | ✅ Decided |
@@ -89,7 +96,7 @@ on 🔄 In Review items — the decision is being worked. Check
 | Agent runtime | Claude Code (CLI) | ✅ Decided |
 | Agent repo | company-x (GitHub) | ✅ Decided |
 | Brief storage | briefs/ folder in Git | ✅ Decided |
-| Memory | Briefs + reports + journal.md | ✅ Decided |
+| Memory | Briefs + reports + briefs/journal.md | ✅ Decided |
 
 ---
 
@@ -100,12 +107,7 @@ record it here before updating the table above.
 
 | Date | Decision | Options Considered | Choice Made | Rationale |
 |---|---|---|---|---|
-| 2026-03-17 | Web framework | Next.js, Vite + React | Next.js | Growing project, free Vercel hosting, industry standard |
-| 2026-03-17 | Web state management | React useState, Zustand | Zustand | Project will grow over time, lightweight and simple |
-| 2026-03-17 | Web auth | Auth required vs not required | Not required | Personal tool, no user accounts needed |
-| 2026-03-17 | Cloud provider (web) | Vercel, Netlify | Vercel | Free tier, pairs with Next.js, auto-deploys from GitHub |
-| 2026-03-17 | CI/CD | GitHub Actions, none | GitHub Actions | Already on GitHub, free tier, project will grow |
-| 2026-03-17 | Web styling | Tailwind CSS, CSS Modules | Tailwind CSS | Pairs naturally with Next.js, free, scales well as project grows |
+| — | — | — | — | — |
 
 ---
 

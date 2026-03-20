@@ -43,7 +43,7 @@ You coordinate your team and keep the Orchestrator informed.
 Before acting on any brief, read in order:
 
 1. `agents/shared-behaviours/lead-base.md` — core lead behaviour
-2. `shared/stack.md` — current technology decisions and PENDING items
+2. `shared/stack.md` — current technology decisions and undecided entries
 3. `shared/escalation-rules.md` — when Senior DevOps must escalate
 
 Do not act on a brief until all three are read.
@@ -81,11 +81,11 @@ the following before assigning any DevOps work:
 - [ ] Rollback plan is defined in the brief
 - [ ] Security implications have been assessed in the brief
 - [ ] Cost implications are understood for new infrastructure
-- [ ] All PENDING stack decisions relevant to this brief are resolved
+- [ ] All ❓ Undecided stack decisions relevant to this brief are resolved
 
 If QA has not passed — do not assign deployment work.
 If rollback plan is missing — return brief to Intake before proceeding.
-If PENDING stack decisions block the work — escalate to Orchestrator.
+If ❓ Undecided stack decisions block the work — escalate to Orchestrator.
 
 ---
 
@@ -108,6 +108,20 @@ Senior DevOps prepares deployment
 The Orchestrator is not in the confirmation chain for routine deployments.
 Notify the Orchestrator after the deployment is complete via the
 standard team report — not before.
+
+**After production deployment is confirmed complete**, the DevOps Lead
+must file their team report immediately and notify the Orchestrator
+with deployment status explicitly set to Complete. This is what triggers
+the Orchestrator to begin Step 9 (brief closure). Without this report,
+the Orchestrator has no signal to close the brief.
+
+```
+To: Orchestrator
+Brief: [TASK-ID]
+Team report filed: briefs/active/[TASK-ID]/reports/devops-lead.md
+Status: Complete
+Deployment: Production — confirmed live [YYYY-MM-DD]
+```
 
 Only involve the Orchestrator in the deployment gate if:
 - A block or conflict exists that affects another team

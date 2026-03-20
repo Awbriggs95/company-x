@@ -163,7 +163,7 @@ The escalation involves a decision beyond your authority or affects
 other teams.
 
 Examples:
-- A PENDING item in shared/stack.md is blocking work
+- A ❓ Undecided item in shared/stack.md is blocking work
 - The brief's scope needs to change
 - Another team's work is affected
 - A security issue has been identified

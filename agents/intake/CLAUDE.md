@@ -13,7 +13,10 @@ permissions:
   write:
     - briefs/backlog/
   deny:
-    - agents/
+    - agents/admin/
+    - agents/orchestrator/
+    - agents/teams/
+    - agents/shared-behaviours/
     - briefs/active/
     - briefs/completed/
     - src/
@@ -121,7 +124,7 @@ Every request follows this sequence. Do not skip or reorder steps.
 6. VALIDATE      — Run quality checks (see brief-validation.md)
 7. PRESENT       — Show brief to operator with any warnings
 8. CONFIRM & FILE — Get operator approval, file immediately on confirmation
-9. HAND OFF      — Notify Orchestrator
+9. HAND OFF      — Complete — filing confirmation serves as handoff
 ```
 
 Never proceed to the next step until the current step is complete.
@@ -193,7 +196,7 @@ append the type-specific fields from the relevant template above.
 
 ## Step 6 — Validation
 
-Read `agents/intake/skills/brief-validation.md` and run all six checks.
+Read `agents/intake/skills/brief-validation.md` and run all seven checks.
 
 Produce the internal validation summary. Do not show it to the operator.
 Append any warnings to the bottom of the brief before presenting.
@@ -245,25 +248,24 @@ a separate message:
 
 ```
 Filed: briefs/backlog/[filename]
-Ready to hand off to the Orchestrator whenever you are.
-```
 
-Do not move the brief to briefs/active/ — that is the operator's action.
-
----
-
-## Step 10 — Handoff
-
-Notify the Orchestrator that a new brief is ready:
-
-```
-New brief ready for routing:
 - ID: [TASK-ID]
 - Type: [Type]
 - Priority: [Priority]
-- Location: briefs/backlog/[filename]
 - Affected teams: [list]
+
+Activate the Orchestrator to route when ready.
 ```
+
+Do not move the brief to briefs/active/ — that is the Orchestrator's action when routing begins.
+
+---
+
+## Step 9 — Handoff
+
+Step 9 is complete when Step 8's filing confirmation is sent.
+There is no separate handoff message — the operator has everything
+they need to activate the Orchestrator.
 
 Your work on this brief is complete at this point.
 Do not follow up, check in, or monitor the brief's progress —
@@ -281,19 +283,34 @@ Before starting any session, read the following files to orient yourself:
 
 ### Stack State Check
 
-After reading `shared/stack.md`, count all ❓ Undecided entries across
-every section.
+The root CLAUDE.md runs tech-architect before activating any agent,
+so by the time Intake is active, all stack.md entries should already
+be in an explicit known state.
 
-**If 5 or more ❓ Undecided entries exist:**
-Load `agents/intake/skills/tech-architect.md` immediately before
-doing anything else — including the standard first message.
+As a safety net, after reading `shared/stack.md`, check whether any
+entry is still blank or in its default template state.
 
-The tech-architect skill will run a stack definition conversation
-with the operator, populate `shared/stack.md`, and return control
-here when complete. Resume the standard first message and normal
-intake flow after the skill exits.
+**If any entry is blank or in default state:**
+Do not re-run tech-architect. Surface a warning to the operator instead:
 
-**If fewer than 5 ❓ Undecided entries exist:**
+```
+Before we start — I can see [N] entries in shared/stack.md that
+haven't been set yet. This usually means the initialisation sequence
+didn't complete fully.
+
+You can resolve this by activating the admin agent and running
+'resolve all' under the stack command, or by switching to admin
+now and I'll be here when you switch back.
+
+Want to continue anyway? Any briefs I create may have gaps
+where these decisions are needed.
+```
+
+Wait for the operator's response before proceeding. If they want
+to continue — proceed and flag any affected fields as Open Questions
+in each brief. If they want to resolve first — they will switch agents.
+
+**If all entries are in an explicit known state:**
 Proceed with the standard first message and normal intake flow.
 
 ### Capability Gap Check
@@ -311,17 +328,36 @@ Your request requires [capability] but our current stack doesn't
 have a decision for this yet. We should define it before I draft
 the brief — otherwise agents won't have what they need to build it.
 
-Want me to run through the stack decisions for [capability] now?
-This will only take a few minutes and I'll pick up your request
-right after.
+Options:
+a) Decide now — walk me through your preference and I'll update the stack
+b) Research first — I'll create a SPIKE brief to evaluate the options,
+   then we come back to this request once the decision is made
+c) Skip it — I'll note it as an Open Question and continue,
+   but agents may hit this gap when they start work
 ```
 
-If operator confirms → load `agents/intake/skills/tech-architect.md`
-in targeted mode, scoped to the missing capability only. Resume the
-original brief on exit.
+Wait for the operator's response before proceeding.
 
-If operator declines → note the gap as an Open Question in the brief
-and continue. Flag it clearly so the Orchestrator catches it at routing.
+**If operator chooses (a) — Decide now:**
+Load `agents/intake/skills/tech-architect.md` in Targeted Mode,
+scoped to the missing capability only. Resume the original brief on exit.
+
+**If operator chooses (b) — Research first:**
+Create a SPIKE brief scoped to the missing capability decision.
+Complete and file the SPIKE brief fully before returning to the
+original request. Note in the original request's context that it
+is parked pending the SPIKE outcome — the operator will need to
+re-submit it after the SPIKE closes and the decision is made.
+
+**If operator chooses (c) — Skip it:**
+Note the gap as an Open Question in the brief and continue.
+Flag it clearly so the Orchestrator catches it at routing:
+
+```
+⚠️ Open Question: [capability] has no stack decision.
+Agents may escalate when they encounter this gap.
+Recommend resolving via admin agent or SPIKE before routing.
+```
 
 Do not read agent CLAUDE.md files outside your own — that context is
 not relevant to intake.
@@ -341,7 +377,7 @@ Session complete. [N] briefs created:
 1. [TASK-ID] — [short title] — [Priority] — briefs/backlog/[filename]
 2. [TASK-ID] — [short title] — [Priority] — briefs/backlog/[filename]
 
-All filed and ready for Orchestrator routing.
+All filed. Activate the Orchestrator to route when ready.
 ```
 
 ---

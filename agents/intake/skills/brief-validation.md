@@ -136,12 +136,34 @@ Plain text references are ambiguous and untrackable.
 - At least one team is checked in the Affected Teams section
 - The checked teams are consistent with the work described in the brief
 
-**Fails if:**
+**For non-SPIKE briefs, fails if:**
 - No teams are checked
 - The brief describes frontend work but Engineering — Frontend is not checked
 - The brief describes backend work but Engineering — Backend is not checked
 - The brief describes infrastructure work but DevOps is not checked
 - The brief describes testing requirements but QA is not checked
+
+**For SPIKE briefs, use subject-matter routing:**
+Determine the correct team(s) by reading the "Question to Answer" field
+and mapping the subject matter to the team that would execute the research:
+
+| Subject matter | Expected team |
+|---|---|
+| Frontend technology, UI libraries, React Native, navigation, state management, styling | Engineering — Frontend |
+| Backend technology, API design, database, auth providers, server frameworks | Engineering — Backend |
+| Infrastructure, CI/CD, deployment, cloud providers, monitoring, build tooling | DevOps |
+| Cross-cutting concerns spanning multiple domains | All relevant teams |
+
+QA is rarely the executing team for a SPIKE — only check QA if the
+spike is specifically about testing strategy or QA tooling.
+
+**Fails if:**
+- A SPIKE brief's Question to Answer involves frontend technology but
+  Engineering — Frontend is not checked
+- A SPIKE brief's Question to Answer involves backend technology but
+  Engineering — Backend is not checked
+- A SPIKE brief's Question to Answer involves infrastructure but
+  DevOps is not checked
 
 **Warning message:**
 ```
@@ -156,6 +178,8 @@ should be involved. If not, note why in the Notes field.
 **Why this matters:**
 Missing a team means their work is not planned for or sequenced.
 The Orchestrator routes based on affected teams — omissions cause gaps.
+For SPIKEs specifically, the wrong team assignment means the research
+is done by an agent without the relevant domain expertise.
 
 ---
 
@@ -257,9 +281,46 @@ A spike without a time box will run indefinitely.
 
 ---
 
+### Check 7 — SPIKE Briefs Targeting a Stack Decision Name the Entry
+
+**Applies to:** SPIKE briefs only. Skip this check for all other types.
+
+**Passes if:**
+- The spike was NOT created to resolve a stack decision
+  (i.e. it is an operator-initiated research spike, not a capability gap spike)
+- OR the spike WAS created to resolve a stack decision AND the
+  "Decision This Unblocks" field explicitly names the `shared/stack.md`
+  entry it targets, in the exact format used in stack.md
+  (e.g. "Auth provider", "Backend framework", "State management (mobile)")
+
+**Fails if:**
+- The spike was created via the Capability Gap Check (option b)
+- AND the "Decision This Unblocks" field does not name the specific
+  stack.md entry being resolved
+
+**Warning message:**
+```
+### Warning — Stack Decision Target Not Named
+**Issue:** This SPIKE appears to be resolving a stack decision but
+the "Decision This Unblocks" field does not name the specific
+shared/stack.md entry it targets.
+**Location:** Decision This Unblocks field
+**Suggested fix:** Add the exact stack.md entry name to the
+"Decision to be made" line, e.g.:
+"Decision to be made: Auth provider (shared/stack.md — Backend section)"
+```
+
+**Why this matters:**
+When the Orchestrator routes a SPIKE brief, it reads the
+"Decision This Unblocks" field to know which stack.md entry to
+set to 🔄 In Review. Without the exact entry name, the Orchestrator
+cannot reliably update stack.md and the In Review state will be missed.
+
+---
+
 ## Validation Summary Format
 
-After running all six checks, produce an internal summary before
+After running all seven checks, produce an internal summary before
 deciding how to present the brief:
 
 ```
@@ -270,6 +331,7 @@ Validation summary:
 - Check 4 (TASK ID Format): [Pass / Warn — description]
 - Check 5 (Priority Rationale): [Pass / Warn — description]
 - Check 6 (Type-Specific Fields): [Pass / Warn — description]
+- Check 7 (SPIKE Stack Target): [Pass / Warn / N/A — description]
 
 Total warnings: [N]
 Presentation mode: [Clean / With warnings]

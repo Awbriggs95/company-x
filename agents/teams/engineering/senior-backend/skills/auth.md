@@ -8,11 +8,11 @@
 
 ## Check Stack First
 
-Auth provider is marked PENDING in `shared/stack.md`.
+Auth provider is ❓ Undecided in `shared/stack.md`.
 Before implementing any auth:
 1. Check `shared/stack.md` — is an auth provider now approved?
 2. If approved — use that provider
-3. If still PENDING — escalate to Lead immediately
+3. If still ❓ Undecided — escalate to Lead immediately
 
 ---
 

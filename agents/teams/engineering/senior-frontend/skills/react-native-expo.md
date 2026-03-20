@@ -127,7 +127,8 @@ Never render a screen that can silently fail or show nothing.
 - Use `useCallback` for functions passed as props
 - Use `useMemo` for expensive computations
 - Use `FlashList` from `@shopify/flash-list` for long lists — never `FlatList`
-  for lists over 50 items
+  for lists over 50 items. Check `shared/stack.md` first — if `@shopify/flash-list`
+  is not listed, escalate to Lead before using it.
 - Avoid deeply nested component trees — flatten where possible
 
 ---

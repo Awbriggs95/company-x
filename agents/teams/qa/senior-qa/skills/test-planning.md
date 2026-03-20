@@ -110,8 +110,12 @@ and need verification that they still work correctly]
 - Every acceptance criterion must map to at least one test case in TC-xxx
 - Regression tests must cover areas adjacent to the change — not just
   the changed feature itself
-- Edge cases must include: empty states, maximum length inputs,
-  network failure scenarios, and unauthorised access attempts
+- Edge cases must always include empty states and maximum length inputs
+- Network failure scenarios are required when the feature makes API calls
+- Unauthorised access attempts are required when the feature involves
+  auth, permissions, or protected resources
+- Do not write edge cases for network or auth when they are not relevant
+  to the brief — stay within the brief's scope
 - Do not write test cases for things that are explicitly out of scope
   in the brief — stay within the brief's boundaries
 - Test plan must be saved before any execution begins — no exceptions

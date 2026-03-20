@@ -8,11 +8,11 @@
 
 ## Check Stack First
 
-Database technology is marked PENDING in `shared/stack.md`.
+Database technology is ❓ Undecided in `shared/stack.md`.
 Before writing any schema or migration:
 1. Check `shared/stack.md` — is a database now approved?
 2. If approved — use that database and its migration tooling
-3. If still PENDING — escalate to Lead immediately
+3. If still ❓ Undecided — escalate to Lead immediately
 
 The principles below apply regardless of database chosen.
 

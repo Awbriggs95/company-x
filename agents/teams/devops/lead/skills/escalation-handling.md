@@ -25,12 +25,15 @@ Brief: [TASK-ID]
 Environment: [which environment]
 Failure point: [where in the deployment it failed]
 Current state: [what is and isn't deployed]
+Is this deployment idempotent? [Yes — safe to retry from scratch | No — partial state exists]
 Recommended action: [Rollback / Retry / Investigate — with rationale]
 Awaiting your instruction before any further action.
 ```
 
-Never attempt to retry or rollback a failed production deployment
-without operator instruction.
+Do not retry or rollback without operator instruction — even if
+the deployment appears idempotent. The operator may quickly confirm
+a retry is safe, but that confirmation must come explicitly through
+the Orchestrator before any action is taken.
 
 ---
 

@@ -9,7 +9,10 @@
 
 All API calls must go through a dedicated service layer.
 Never call fetch or any HTTP client directly from a component,
-screen, or hook.
+screen, or hook — always go through `src/services/`.
+
+The service layer itself uses fetch via the base API client in
+`src/services/api.ts`. That is the only place fetch is called directly.
 
 ```
 src/services/

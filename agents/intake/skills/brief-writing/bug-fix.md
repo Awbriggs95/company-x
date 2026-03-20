@@ -202,7 +202,7 @@ on Android devices. Users cannot sign in on Android at all.
 - [x] Engineering — Backend
 - [x] QA
 - [ ] DevOps
-- [ ] PM
+- [ ] PM *(no PM agent exists yet — leave unchecked unless a PM agent has been created via admin)*
 
 ## Dependencies
 - FEAT-2026-03-14-001 (Google OAuth Login) — this bug is in that feature

@@ -6,6 +6,22 @@
 
 ---
 
+## Step 0 — Check if Classification Is Already Known
+
+Before running any classification logic, check whether the Intake Agent
+already knows the request type from context.
+
+**If Intake is creating a SPIKE brief via the Capability Gap Check**
+(operator chose option b — "Research first"):
+- Skip Steps 1–4 entirely — the type is already known to be SPIKE
+- Record classification as SPIKE with High confidence
+- Proceed directly to `question-asking.md` with the capability gap
+  as the subject of the spike
+
+**Otherwise — proceed to Step 1.**
+
+---
+
 ## Step 1 — Read the Full Request
 
 Read the operator's entire message before making any classification decision.

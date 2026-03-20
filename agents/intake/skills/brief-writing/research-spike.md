@@ -215,6 +215,10 @@ it is genuinely necessary before agents spend time on it.
 
 **Decision to be made:** [The specific choice that will be made using this spike's output]
 
+**Stack entry this resolves:** [If this spike resolves a shared/stack.md entry —
+name it exactly as it appears in stack.md, e.g. "Auth provider (Backend section)".
+If this spike does not resolve a stack entry, write "None — not a stack decision."]
+
 **Who makes the decision:** Operator
 
 **Briefs unblocked after decision:**
@@ -228,6 +232,9 @@ it is genuinely necessary before agents spend time on it.
 **Writing rules:**
 - The decision must be made by the operator — agents recommend,
   operators decide
+- If this spike resolves a stack.md entry, the exact entry name is
+  mandatory — the Orchestrator uses it to set the entry to 🔄 In Review
+  when routing. Use the exact name from stack.md, not a paraphrase.
 - List every brief that is blocked waiting for this spike — this
   shows the true cost of the investigation and its value
 - If no briefs are blocked by this spike, question whether it is
@@ -250,7 +257,7 @@ it is genuinely necessary before agents spend time on it.
 - **Branch:** spike/SPIKE-2026-03-14-006-state-management
 
 ## Intent
-State management is currently marked as PENDING in stack.md.
+State management is currently marked as ❓ Undecided in stack.md.
 We are about to build features that require shared state across
 screens. We need to select our approach before development begins
 to avoid having to refactor later.
@@ -265,11 +272,11 @@ to avoid having to refactor later.
 - Server-side caching strategies
 
 ## Affected Teams
-- [ ] Engineering — Frontend
+- [x] Engineering — Frontend
 - [ ] Engineering — Backend
 - [ ] DevOps
 - [ ] QA
-- [x] PM
+- [ ] PM *(no PM agent exists yet — leave unchecked unless a PM agent has been created via admin)*
 
 ## Dependencies
 - None
@@ -356,6 +363,8 @@ briefs/active/SPIKE-2026-03-14-006/reports/senior-frontend-spike-output.md
 
 **Decision to be made:** Which state management library to adopt
 as the standard for all Company-X projects.
+
+**Stack entry this resolves:** State management (Mobile section)
 
 **Who makes the decision:** Operator
 

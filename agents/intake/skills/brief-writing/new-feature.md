@@ -248,7 +248,7 @@ don't need to create a separate password for the app.
 - [x] Engineering — Backend
 - [x] QA
 - [ ] DevOps
-- [ ] PM
+- [ ] PM *(no PM agent exists yet — leave unchecked unless a PM agent has been created via admin)*
 
 ## Dependencies
 - None

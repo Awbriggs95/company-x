@@ -14,6 +14,21 @@
 
 Do not begin execution without all four confirmed.
 
+**If the branch fails to build or the environment cannot be set up:**
+Do not treat this as a failed test. Escalate to QA Lead immediately:
+
+```
+To: QA Lead
+Brief: [TASK-ID]
+Escalation type: Environment not ready
+Issue: [Specific problem — build error, missing config, broken env]
+Impact: Cannot begin test execution
+Continuing: Nothing — fully blocked until environment is resolved
+```
+
+Do not attempt to work around a broken environment. A passing test
+run on a broken build is meaningless.
+
 ---
 
 ## Execution Standards

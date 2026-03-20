@@ -6,6 +6,32 @@
 
 ---
 
+## Before Writing the Report
+
+Read the Senior DevOps report at:
+```
+briefs/active/[TASK-ID]/reports/senior-devops.md
+```
+
+Also confirm the preparation report was filed (if production was in scope):
+```
+briefs/active/[TASK-ID]/reports/devops-preparation.md
+```
+
+Check the following before synthesising:
+
+- [ ] Senior DevOps report is filed and complete
+- [ ] Preparation report exists if production deployment was in scope
+- [ ] All environments in the routing plan have a confirmed status
+- [ ] Rollback status is documented
+- [ ] Cost impact is addressed
+- [ ] No unresolved escalations remain
+- [ ] If production was deployed — operator confirmation is on record
+
+If any check fails — resolve the issue before writing the report.
+
+---
+
 ## Report Format
 
 Save to:

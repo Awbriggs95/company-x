@@ -55,7 +55,8 @@ to identify components that re-render excessively before optimising.
 Large lists are the most common cause of poor scroll performance.
 
 ```typescript
-// ✅ FlashList for lists over 50 items
+// ✅ FlashList for lists over 50 items — check stack.md first,
+//    escalate to Lead if @shopify/flash-list is not approved
 import { FlashList } from '@shopify/flash-list';
 
 <FlashList

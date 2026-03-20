@@ -209,7 +209,7 @@ manual local builds.
 - [ ] Engineering — Backend
 - [x] DevOps
 - [x] QA
-- [ ] PM
+- [ ] PM *(no PM agent exists yet — leave unchecked unless a PM agent has been created via admin)*
 
 ## Dependencies
 - App must be registered in Apple Developer and Google Play Console

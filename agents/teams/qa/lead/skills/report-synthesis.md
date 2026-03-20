@@ -56,9 +56,14 @@ to move forward or does it need engineering attention?]
 
 [If none: "No bugs found."]
 
-| ID | Severity | Description | Steps to Reproduce | Platform |
+| QA-ID | Severity | Description | Steps to Reproduce | Platform |
 |---|---|---|---|---|
-| BUG-[seq] | [Critical/High/Medium/Low] | [One line] | [Brief steps] | [iOS/Android/Both] |
+| QA-[seq] | [Critical/High/Medium/Low] | [One line] | [Brief steps] | [iOS/Android/Both] |
+
+**Note:** QA-IDs (e.g. QA-001) are temporary identifiers for bugs found
+during this test run. They are not TASK IDs. If the operator decides to
+create a BUG brief for any of these, Intake will assign a proper TASK ID
+(e.g. BUG-2026-03-14-007) at that time.
 
 **Operator action required:** [Yes — N bugs flagged for your review | No]
 

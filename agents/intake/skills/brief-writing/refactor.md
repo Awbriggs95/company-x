@@ -239,7 +239,7 @@ This refactor extracts it into a dedicated custom hook.
 - [ ] Engineering — Backend
 - [x] QA
 - [ ] DevOps
-- [ ] PM
+- [ ] PM *(no PM agent exists yet — leave unchecked unless a PM agent has been created via admin)*
 
 ## Dependencies
 - FEAT-2026-03-14-001 must be complete before this refactor begins
