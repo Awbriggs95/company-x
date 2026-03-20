@@ -3,12 +3,12 @@
 ## Meta
 - **ID:** SPIKE-2026-03-20-002
 - **Type:** Research Spike
-- **Status:** Backlog
+- **Status:** Active
 - **Priority:** High — blocks the 69+420 easter egg feature brief, which cannot be drafted until a 3D rendering approach is decided
 - **Date Created:** 2026-03-20
 - **Requested By:** Operator
 - **Branch:** spike/SPIKE-2026-03-20-002-3d-rendering-library
-- **File Lock:** _(populated by Orchestrator at routing time)_
+- **File Lock:** briefs/active/SPIKE-2026-03-20-002/reports/senior-frontend-spike-output.md
 
 ---
 

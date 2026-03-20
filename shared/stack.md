@@ -57,6 +57,7 @@ on 🔄 In Review items — the decision is being worked. Check
 | Styling | Not determined | ❓ Undecided |
 | State management | Not determined | ❓ Undecided |
 | Auth | Not determined | ❓ Undecided |
+| 3D rendering library | SPIKE-2026-03-20-002 | 🔄 In Review |
 
 > Web frontend section added when a web capability was first requested.
 > All entries Undecided until a web framework SPIKE is completed.
@@ -107,7 +108,7 @@ record it here before updating the table above.
 
 | Date | Decision | Options Considered | Choice Made | Rationale |
 |---|---|---|---|---|
-| — | — | — | — | — |
+| 2026-03-20 | 3D rendering library | — | 🔄 In Review | SPIKE-2026-03-20-002 active |
 
 ---
 
