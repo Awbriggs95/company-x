@@ -153,7 +153,7 @@ None — the calculator holds no user data. Rolling back simply takes the URL of
 ## Report Index
 | Agent | Report | Status |
 |---|---|---|
-| — | — | — |
+| Senior DevOps | reports/senior-devops-preparation.md | Awaiting operator confirmation |
 
 ---
 
