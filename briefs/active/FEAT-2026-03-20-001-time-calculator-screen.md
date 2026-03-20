@@ -3,12 +3,12 @@
 ## Meta
 - **ID:** FEAT-2026-03-20-001
 - **Type:** New Feature
-- **Status:** Backlog
+- **Status:** Active
 - **Priority:** Low — personal tool, no users blocked
 - **Date Created:** 2026-03-20
 - **Requested By:** Operator
 - **Branch:** feature/FEAT-2026-03-20-001-time-calculator-screen
-- **File Lock:** _(populated by Orchestrator at routing time)_
+- **File Lock:** `web/src/components/Calculator/`, `web/src/store/calculatorStore.ts`
 
 ---
 
