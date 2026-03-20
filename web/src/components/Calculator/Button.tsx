@@ -8,6 +8,7 @@ interface ButtonProps {
   variant?: ButtonVariant;
   wide?: boolean;
   active?: boolean;
+  className?: string;
 }
 
 const VARIANT_CLASSES: Record<ButtonVariant, string> = {
@@ -17,7 +18,7 @@ const VARIANT_CLASSES: Record<ButtonVariant, string> = {
   equals: 'bg-orange-500 hover:bg-orange-400 text-white',
 };
 
-const Button = ({ label, onClick, variant = 'default', wide = false, active = false }: ButtonProps) => {
+const Button = ({ label, onClick, variant = 'default', wide = false, active = false, className = '' }: ButtonProps) => {
   const baseClasses =
     'flex items-center justify-center rounded-full text-2xl font-light select-none cursor-pointer transition-opacity active:opacity-70 h-16 sm:h-20';
   const variantClasses = active
@@ -27,7 +28,7 @@ const Button = ({ label, onClick, variant = 'default', wide = false, active = fa
 
   return (
     <button
-      className={`${baseClasses} ${variantClasses} ${widthClasses}`}
+      className={`${baseClasses} ${variantClasses} ${widthClasses} ${className}`}
       onClick={onClick}
       aria-label={label}
     >
