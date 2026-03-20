@@ -1,15 +1,21 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Display from './Display';
 import ButtonGrid from './ButtonGrid';
+import TimeCalculator from '@/components/TimeCalculator';
 import { useCalculatorStore } from '@/store/calculatorStore';
 
+type Mode = 'arithmetic' | 'time';
+
 const Calculator = () => {
+  const [mode, setMode] = useState<Mode>('arithmetic');
   const { displayValue, expression, inputDigit, inputDecimal, inputOperator, calculate, clear } =
     useCalculatorStore();
 
   useEffect(() => {
+    if (mode !== 'arithmetic') return;
+
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key >= '0' && e.key <= '9') {
         inputDigit(e.key);
@@ -40,12 +46,18 @@ const Calculator = () => {
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [inputDigit, inputDecimal, inputOperator, calculate, clear]);
+  }, [mode, inputDigit, inputDecimal, inputOperator, calculate, clear]);
 
   return (
     <div className="w-full max-w-xs sm:max-w-sm bg-black rounded-3xl overflow-hidden shadow-2xl">
-      <Display expression={expression} displayValue={displayValue} />
-      <ButtonGrid />
+      {mode === 'arithmetic' ? (
+        <>
+          <Display expression={expression} displayValue={displayValue} />
+          <ButtonGrid onSwitchMode={() => setMode('time')} />
+        </>
+      ) : (
+        <TimeCalculator onBack={() => setMode('arithmetic')} />
+      )}
     </div>
   );
 };
