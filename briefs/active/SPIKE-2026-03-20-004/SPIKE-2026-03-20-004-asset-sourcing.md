@@ -3,12 +3,12 @@
 ## Meta
 - **ID:** SPIKE-2026-03-20-004
 - **Type:** Research Spike
-- **Status:** Backlog
+- **Status:** Active
 - **Priority:** Medium — unblocks the 3D scene work in FEAT-2026-03-20-003; low-priority feature but asset must be found before engineering can finalise the scene
 - **Date Created:** 2026-03-20
 - **Requested By:** Operator
 - **Branch:** spike/SPIKE-2026-03-20-004-asset-sourcing
-- **File Lock:** _(populated by Orchestrator at routing time)_
+- **File Lock:** briefs/active/SPIKE-2026-03-20-004/reports/senior-frontend-spike-output.md
 
 ---
 
