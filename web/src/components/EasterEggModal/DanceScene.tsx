@@ -39,7 +39,7 @@ export const DanceSceneError = () => (
   <div className="flex items-center justify-center h-full">
     {/* eslint-disable-next-line @next/next/no-img-element */}
     <img
-      src="https://tenor.com/bQDvb.gif"
+      src="https://gifdb.com/images/high/snoop-dogg-dance-485-x-498-gif-vx6ut0jfldjbyq1i.webp"
       alt="Dancing"
       className="max-h-full max-w-full object-contain"
     />
